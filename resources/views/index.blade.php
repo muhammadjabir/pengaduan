@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="{{asset('mini-logo.PNG')}}">
-    <title>Mode Developer</title>
+    <title>Aplikasi Pelayanan Hukum</title>
     <link href="{{asset('fontawesome/css/all.css')}}"
     rel="stylesheet">
      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
