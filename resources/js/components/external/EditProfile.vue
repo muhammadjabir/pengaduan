@@ -8,7 +8,7 @@
       tile
       >
         <v-card-title
-          class="red darken-4 white--text"
+          class="teal darken-2 white--text"
           primary-title
         >
           Edit Profile

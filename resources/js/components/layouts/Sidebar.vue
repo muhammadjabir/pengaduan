@@ -25,7 +25,7 @@
         <div v-for="item in menu" :key="item.id">
             <v-list-item
 	        :to="item.url"
-            active-class="pink--text text--accent-3"
+            active-class="teal--text text--accent-3"
             v-if="item.status_child == false"
             >
             <v-list-item-icon>
@@ -40,7 +40,7 @@
             <v-list-group
                 :prepend-icon="item.icon"
                 no-action
-                active-class="pink--text text--accent-3"
+                active-class="teal--text text--accent-3"
                 v-else
                 >
                 <template v-slot:activator>
@@ -54,7 +54,7 @@
 
                     :href="subItem.url"
                     :to="subItem.url"
-                active-class="pink--text text--accent-34"
+                active-class="teal--text text--accent-3"
                 >
                 <v-list-item-content>
                     <v-list-item-title v-text="subItem.description"></v-list-item-title>

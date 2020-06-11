@@ -2,7 +2,7 @@
     <v-app>
         <Progress v-if="loading"/>
         <v-container v-if="!loading">
-            <v-btn small color="red accent-4" class="white--text" tile>Kategori</v-btn>
+            <v-btn small color="teal darken-2" class="white--text" tile>Kategori</v-btn>
             <v-card
             class="border-edit"
             tile
@@ -62,7 +62,7 @@
                     :length="lengthpage"
                     :total-visible="7"
                     @input="go"
-                    color="red accent-4"
+                    color="teal darken-2"
                     ></v-pagination>
                 </div>
                 <v-card-actions class="">

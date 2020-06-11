@@ -47,7 +47,7 @@
                         <br>
                         <v-btn
                         :disabled="!valid"
-                        color="pink accent-3"
+                        color="teal darken-2"
                         class="mr-4 white--text"
                         rounded
                         block

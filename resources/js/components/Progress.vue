@@ -2,7 +2,7 @@
 	<div class="text-center mx-auto">
 	<v-progress-circular
 	  indeterminate
-	  color="red accent-4"
+	  color="teal darken-2"
 	  :size="200"
       class="mx-auto"
 	></v-progress-circular>

@@ -17,7 +17,7 @@
  <style>
 
     .border-edit{
-    border-top: 2px solid #D50000 !important;
+    border-top: 2px solid #008080 !important;
     }
     .v-application--is-ltr .v-list-item__action:first-child, .v-application--is-ltr .v-list-item__icon:first-child{
         margin-right: 15px !important;
@@ -26,8 +26,12 @@
         padding-left: 55px !important;
     }
     .title-color{
-        background-color: #D50000 !important;
+        background-color: #008080 !important;
         color: white !important;
+    }
+    .red.accent-4 {
+        background-color: #008080 !important;
+        border-color: #008080 !important;
     }
 
 

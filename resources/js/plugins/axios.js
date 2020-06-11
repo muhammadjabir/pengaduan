@@ -4,7 +4,7 @@ import Vue from 'vue';
 import axios from "axios";
 
 // Full config:  https://github.com/axios/axios#request-config
-axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || 'http://birokrasi.id/api' || 'http://localhost:8000/api';
+// axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || 'http://birokrasi.id/api' || 'http://localhost:8000/api';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
