@@ -28,13 +28,14 @@ class HomeController extends Controller
         if ($request->kategori) {
             $pengaduan = Pengaduan::with(['warga','kategori'])
             ->where('status_tampil',true)
-
+            ->where('jawaban','!=',null)
             ->whereHas('kategori',function($q) use($request){
                 $q->where('slug',$request->kategori);
             })->get();
         } else {
             $pengaduan = Pengaduan::with(['warga','kategori'])
             ->where('status_tampil',true)
+            ->where('jawaban','!=',null)
             ->get();
         }
         return view('home',compact('kategori','pengaduan'));
