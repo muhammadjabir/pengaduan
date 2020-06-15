@@ -15,12 +15,18 @@
 
     <div class="card mb-4" >
         <div class="card-body">
-
+            @if ($pengaduan->jawaban)
             <span class="text-muted">Jawaban</span>
             <div>{!! $pengaduan->jawaban !!}</div>
 
             <br>
             <span>By {{$pengaduan->user->name}} - {{$pengaduan->updated_at->format('d/m/Y H:i')}}</span>
+            @else
+                <h2 class="text-center">
+                    Kami Belum Menjawab Pertanyaan Ini
+                </h2>
+            @endif
+
         </div>
     </div>
 </div>

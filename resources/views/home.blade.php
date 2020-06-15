@@ -4,23 +4,23 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-4 mb-3">
-            <div class="card-header text-white bg-success">  
+            <div class="card-header text-white bg-success">
                 <h4 class="card-title my-1">PELAYANAN HUKUM ONLINE</h4>
-            </div>  
-            
+            </div>
+
             <div class="card">
-                <div class="card-body">  
-                    <p class="card-text"> 
+                <div class="card-body">
+                    <p class="card-text">
                     <b> Pelayanan Hukum Terpadu Kejaksaan RI </b> adalah sebuah sarana untuk memberikan akses pelayanan hukum secara cuma-cuma dan terpadu dengan Kejaksaan Tinggi dan Kejaksaan Negeri di seluruh Indonesia. Aplikasi ini dikembangkan oleh <b><i> KN. KABUPATEN BOGOR </b></i>dalam rangka menjalankan tugas dan wewenangnya memberikan Pelayanan Hukum.
                         Yang dimaksud dengan <b>pelayanan hukum yaitu semua bentuk pelanyanan yang diperlukan oleh instansi negara atau pemerintah atau masyarakat yang berkaitan dengan atau masalah perdata maupun tata usaha negara.</b>
                     </p>
                     <a class="nav-link" href="{{ route('pengaduan.create') }}">
                     <button type="button" class="btn btn-success">Masukkan Pertanyaan Anda <i class="fa fa-arrow-right"></i></button>
                 </a>
-                </div>  
+                </div>
             </div>
-        </div>                 
-        <div class="col-12 col-md-8">  
+        </div>
+        <div class="col-12 col-md-8">
             <div class="card">
              <img src="{{asset("/storage/foto_profile/header.png")}}" class="img-fluid" alt="Responsive image">
             </div>
@@ -56,11 +56,12 @@
                 <div class="card-body">
                   <h2 class="card-title ">{{ $item->subjek }}</h2>
                   <p class="card-text"> {!! $item->isi_pengaduan !!}</p>
-                  <a href="{{ route('pengaduan.detail',['id'=>$item->id]) }}" class="btn btn-success">Selengkapnya</a>
+                  <span class="badge badge-{{$item->jawaban ? 'success' : 'danger'}}">{{$item->jawaban ? 'Sudah Dijawab' : 'belum dijawab'}}</span>
+                  <a href="{{ route('pengaduan.detail',['id'=>$item->id]) }}" class="btn btn-success float-right">Selengkapnya</a>
                 </div>
-               
+
               </div>
-           
+
             @endforeach
 
         </div>
