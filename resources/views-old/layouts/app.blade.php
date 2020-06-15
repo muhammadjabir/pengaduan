@@ -17,30 +17,28 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-success shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-white" href="{{ url('/') }}">
-                   <!-- {{ config('app.name', 'Laravel') }} -->
-                <img src="{{asset('img/logo-kejaksaan.png')}}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                   KEJAKSAAN NEGERI KABUPATEN BOGOR
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
                 </a>
-               
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                
-                <!-- Left Side Of Navbar 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('pengaduan.create') }}">Pengaduan</a>
                         </li>
                     </ul>
-                    -->
+
                     <!-- Right Side Of Navbar -->
                     {{-- <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
