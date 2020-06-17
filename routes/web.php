@@ -11,6 +11,8 @@
 |
 */
 Route::get('/','HomeController@index')->name('home');
+Route::get('/lapdu','Lapdu\LapduController@create')->name('lapdu.index');
+Route::post('/lapdu','Lapdu\LapduController@store')->name('lapdu.store');
 Route::get('/pengaduan-masyarakat','Pengaduan\PengaduanController@create')->name('pengaduan.create');
 
 Route::post('/pengaduan-masyarakat','Pengaduan\PengaduanController@store')->name('pengaduan.store');

@@ -28,6 +28,7 @@ Route::get('/role-management','Role\RoleManagementController@index');
 Route::post('/role-management','Role\RoleManagementController@store');
 Route::get('/role-management/{id}/edit','Role\RoleManagementController@edit');
 Route::get('/pengaduan','Pengaduan\PengaduanController@index');
+Route::get('/e-lapdu','Lapdu\LapduController@index');
 Route::get('/pengaduan/{id}/edit','Pengaduan\PengaduanController@edit');
 Route::put('/pengaduan/{id}','Pengaduan\PengaduanController@update');
 Route::resource('masterdata', 'Masterdata\MasterdataController');

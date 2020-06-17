@@ -9,6 +9,7 @@ import MenuRouter from './routes/Menu'
 import RoleManagementRouter from './routes/RoleManagement'
 import KategoriRouter from './routes/Kategori'
 import PengaduanRouter from './routes/Pengaduan'
+import LapduRouter from './routes/Lapdu'
 
 // import Vuetify from 'vuetify'
 // Vue.use(Vuetify)
@@ -35,7 +36,8 @@ const router = new Router({
             MenuRouter,
             RoleManagementRouter,
             KategoriRouter,
-            PengaduanRouter
+            PengaduanRouter,
+            LapduRouter
 
         ]
 
