@@ -59,7 +59,7 @@ class LapduController extends Controller
             $pengaduan->subjek = $request->subjek;
             $pengaduan->isi_pengaduan = $request->isi_pengaduan;
             $pengaduan->nama_pegawai = $request->nama_pegawai;
-
+            $pengaduan->id_warga = $warga->id;
 
             $pengaduan->nomor_registrasi = $nomor;
             if ($request->file('file_pengaduan')) {
