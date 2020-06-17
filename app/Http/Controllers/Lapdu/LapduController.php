@@ -80,4 +80,11 @@ class LapduController extends Controller
             return $e;
         }
     }
+
+    public function edit(Request $request ,$id){
+        $lapdu = Lapdu::with('warga')->findOrFail($id);
+        return response()->json([
+            'lapdu' => $lapdu
+        ])
+    }
 }

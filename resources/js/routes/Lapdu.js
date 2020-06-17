@@ -14,10 +14,10 @@ export default  {
         //     name:'lapdu.create',
         //     component:()=>import('../views/lapdu/create.vue')
         // },
-        // {
-        //     path:':id/edit',
-        //     name:'lapdu.edit',
-        //     component:()=>import('../views/lapdu/edit.vue')
-        // },
+        {
+            path:':id/edit',
+            name:'lapdu.edit',
+            component:()=>import('../views/lapdu/edit.vue')
+        },
     ]
 }
