@@ -83,8 +83,12 @@ class LapduController extends Controller
 
     public function edit(Request $request ,$id){
         $lapdu = Lapdu::with('warga')->findOrFail($id);
+        $status = \App\Models\MasterDataDetail::where('id_master_data',9)->get();
+        $pelanggaran = \App\Models\MasterDataDetail::where('id_master_data',10)->get();
         return response()->json([
-            'lapdu' => $lapdu
-        ])
+            'lapdu' => $lapdu,
+            'status' => $status,
+            'pelanggaran' => $pelanggaran
+        ]);
     }
 }
