@@ -3,7 +3,7 @@
         <v-row>
             <v-col
                     cols="12"
-                    md="8"
+                    md="12"
                 >
                 <v-container>
                     <v-btn small color="teal darken-2" class="white--text" tile>Data Laporan Pengaduan</v-btn>
@@ -42,6 +42,49 @@
 
                         </v-card-actions>
                     </v-card>
+
+                    <br>
+            <v-card
+            class="border-edit"
+            tile
+            >
+                <!-- <v-card-text class="text-center"> -->
+                <v-card-text>
+                    <v-container>
+                        <v-form
+                        ref="form"
+                        v-model="valid"
+                        :lazy-validation="lazy"
+                        >
+                        <label for="" align="left">Jawab</label>
+
+                        <ckeditor height="400px" :editor="editor" v-model="jawaban" :config="editorConfig"></ckeditor>
+                        <v-row>
+                            <v-col
+                            cols="12"
+                            align="right"
+                            >
+                              <v-btn
+                                :disabled="!valid"
+                                color="success"
+                                tile
+                                @click="save()"
+                                :loading="loading"
+                                >
+                                Simpan
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+
+                    </v-form>
+                    </v-container>
+
+                </v-card-text>
+
+                <v-card-actions class="">
+
+                </v-card-actions>
+            </v-card>
                 </v-container>
             </v-col>
         </v-row>
@@ -101,6 +144,16 @@ export default {
          this.axios.get(url,this.config)
          .then((ress) => {
              console.log(ress)
+             let warga = ress.data.lapdu.warga
+             let lapdu = ress.data.lapdu
+             this.isi_pengaduan = lapdu.isi_pengaduan
+             this.nama_pegawai = lapdu.nama_pegawai
+             this.subjek = lapdu.subjek
+             this.nama_warga = warga.nama
+             this.ktp = warga.ktp
+             this.alamat = warga.alamat
+             this.nohp = warga.nohp
+             this.email = warga.email
          })
          .catch((err) => console.log(err.response))
         }

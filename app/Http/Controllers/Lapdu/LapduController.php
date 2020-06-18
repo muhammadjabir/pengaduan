@@ -7,6 +7,8 @@ use App\Lapdu;
 use App\Models\Warga;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendPengaduan;
 
 class LapduController extends Controller
 {
@@ -90,5 +92,17 @@ class LapduController extends Controller
             'status' => $status,
             'pelanggaran' => $pelanggaran
         ]);
+    }
+
+    public function update( Request $request, $id){
+        $pengaduan = Lapdu::with(['warga','user'])->findOrFail($id);
+        $pengaduan->jawaban = $request->jawaban;
+        $pengaduan->id_admin = \Auth::user()->id;
+        if($pengaduan->save()){
+            Mail::to($pengaduan->warga->email)->send(new SendPengaduan($pengaduan));
+        };
+        return response()->json([
+            'message' => 'Berhasil menyimpan jawaban'
+        ],200);
     }
 }
