@@ -41,15 +41,14 @@ Route::get('/wbs','Wbs\WbsController@index');
 Route::get('/wbs/{id}/edit','Wbs\WbsController@edit');
 Route::put('/wbs/{id}','Wbs\WbsController@update');
 
-<<<<<<< HEAD
-=======
 Route::get('/gratifikasi','gratifikasi\gratifikasiController@index');
 Route::get('/gratifikasi/{id}/edit','gratifikasi\gratifikasiController@edit');
 
->>>>>>> 6c11c0e650f0bf86a27eec607e2d1528765c56b1
+
 Route::get('/pengaduan/{id}/edit','Pengaduan\PengaduanController@edit');
 Route::put('/pengaduan/{id}','Pengaduan\PengaduanController@update');
 Route::resource('masterdata', 'Masterdata\MasterdataController');
+
 Route::resource('menu', 'Menu\MenuController');
 Route::resource('users', 'Users\UsersController');
 Route::resource('kategori', 'Kategori\KategoriController');
