@@ -54,10 +54,7 @@
                                  <v-btn color="success" v-on:click="dokumentUrl(item.file_pengaduan)"  v-if="item.file_pengaduan" >
                                     Dokumen
                                 </v-btn>
-                                <!-- <v-btn color="error" fab x-small @click="dialogDelete(item.id)" >
-                                    <v-icon>mdi-delete-outline</v-icon>
-                                </v-btn> -->
-                                </td>
+                       	</td>
                                 <td class="text-left">
                                 <v-btn color="success" v-on:click="edit(item.id)" fab x-small dark >
                                     <v-icon>mdi-circle-edit-outline</v-icon>
