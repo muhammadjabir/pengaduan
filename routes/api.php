@@ -36,6 +36,11 @@ Route::get('/omjaka','omjaka\omjakaController@index');
 Route::get('/omjaka/{id}/edit','omjaka\omjakaController@edit');
 Route::put('/omjaka/{id}','omjaka\omjakaController@update');
 
+
+Route::get('/wbs','Wbs\WbsController@index');
+Route::get('/wbs/{id}/edit','Wbs\WbsController@edit');
+Route::put('/wbs/{id}','Wbs\WbsController@update');
+
 Route::get('/pengaduan/{id}/edit','Pengaduan\PengaduanController@edit');
 Route::put('/pengaduan/{id}','Pengaduan\PengaduanController@update');
 Route::resource('masterdata', 'Masterdata\MasterdataController');

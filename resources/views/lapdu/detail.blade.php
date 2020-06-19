@@ -7,7 +7,8 @@
     <div class="card mb-4" >
         <div class="card-body">
             <h3>{{ $pengaduan->subjek }}</h3>
-            <span class="text-muted">Oleh : {{$pengaduan->warga->nama}} - {{$pengaduan->created_at->format('d/m/Y H:i')}} - {{$pengaduan->kategori->nama}}</span>
+            <span class="text-muted">Oleh : {{$pengaduan->warga->nama}} - {{$pengaduan->created_at->format('d/m/Y H:i')}}</span>
+            <p>isi pengaduan</p>
             <div>
                 {!! $pengaduan->isi_pengaduan !!}
             </div>

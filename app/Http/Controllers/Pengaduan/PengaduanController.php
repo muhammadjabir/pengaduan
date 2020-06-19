@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Pengaduan;
 
 use App\Http\Controllers\Controller;
-use App\Mail\SendPengaduan;
 use App\Models\Kategori;
 use App\Models\Pengaduan;
 use App\Models\Warga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\SendPengaduan;
+
 use DB;
 class PengaduanController extends Controller
 {

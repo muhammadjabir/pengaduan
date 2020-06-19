@@ -11,6 +11,7 @@ import KategoriRouter from './routes/Kategori'
 import PengaduanRouter from './routes/Pengaduan'
 import LapduRouter from './routes/Lapdu'
 import OmjakaRouter from './routes/Omjaka'
+import WbsRouter from './routes/Wbs'
 
 // import Vuetify from 'vuetify'
 // Vue.use(Vuetify)
@@ -39,7 +40,8 @@ const router = new Router({
             KategoriRouter,
             PengaduanRouter,
             LapduRouter,
-            OmjakaRouter
+            OmjakaRouter,
+            WbsRouter
 
         ]
 

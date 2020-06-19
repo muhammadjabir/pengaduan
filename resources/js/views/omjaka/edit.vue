@@ -156,6 +156,8 @@ export default {
              this.nohp = warga.nohp
              this.email = warga.email
              this.jawaban = lapdu.jawaban
+             this.kapan = lapdu.kapan
+             this.dimana = lapdu.dimana
          })
          .catch((err) => console.log(err.response))
         }

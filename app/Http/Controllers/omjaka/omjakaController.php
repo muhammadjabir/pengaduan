@@ -6,13 +6,30 @@ use App\Http\Controllers\Controller;
 use App\Models\Omjaka;
 use App\Models\Warga;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendPengaduan;
 use DB;
 
 class omjakaController extends Controller
 {
+    public function index(Request $request){
+        if ($request) {
+            $user = Omjaka::with(['warga'])->where('subjek','LIKE',"%{$request->keyword}%")
+                    ->orWhereHas('warga',function($q) use($request) {
+                        $q->where('nama','LIKE',"%{$request->keyword}%");
+                    })
+                    ->orWhere('nomor_registrasi','LIKE',"%{$request->keyword}%")
+                    ->paginate(15);
+        }else{
+            $user = Omjaka::paginate(15);
+        }
+
+        return $user;
+    }
     public function create(Request $request){
         if ($request->kode) {
             $pengaduan = Omjaka::with(['warga','user'])->where('nomor_registrasi',$request->kode)->first();
+
             return view('siapomjaka.detail',compact('pengaduan'));
         }else {
             return view('siapomjaka.index');
@@ -75,12 +92,8 @@ class omjakaController extends Controller
 
     public function edit(Request $request ,$id){
         $lapdu = Omjaka::with('warga')->findOrFail($id);
-        $status = \App\Models\MasterDataDetail::where('id_master_data',9)->get();
-        $pelanggaran = \App\Models\MasterDataDetail::where('id_master_data',10)->get();
         return response()->json([
             'lapdu' => $lapdu,
-            'status' => $status,
-            'pelanggaran' => $pelanggaran
         ]);
     }
 
