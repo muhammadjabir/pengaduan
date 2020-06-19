@@ -30,6 +30,6 @@ class SendPengaduan extends Mailable
     public function build()
     {
         $pengaduan = $this->data;
-        return $this->view('email',compact('pengaduan'));
+        return $this->subject('wbs')->view('email',compact('pengaduan'));
     }
 }

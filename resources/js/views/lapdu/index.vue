@@ -47,7 +47,7 @@
                         <tbody>
                             <tr v-for="item in data" :key="item.id">
                                 <td class="text-left">{{item.nomor_registrasi}}</td>
-                                <td class="text-left">{{item.warga.nama}}</td>
+                                <td class="text-left">{{item.warga ? item.warga.nama : ''}}</td>
                                 <td class="text-left">{{item.subjek}}</td>
                                 <td class="text-left">{{item.created_at}}</td>
                                 <td class="text-left">

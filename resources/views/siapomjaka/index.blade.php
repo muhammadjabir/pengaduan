@@ -72,9 +72,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Diaman</label>
+                        <label class="col-sm-2 col-form-label">Dimana</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control"  placeholder="Diaman" name="dimana">
+                        <input type="text" class="form-control"  placeholder="Dimana" name="dimana">
                         </div>
                     </div>
                     <div class="form-group row">

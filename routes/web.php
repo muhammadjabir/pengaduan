@@ -10,12 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test',function(){
+    $user = \App\User::findOrFail(1);
+    $user->password = \Hash::make(123456);
+    $user->save();
+
+});
 Route::get('/','HomeController@index')->name('home');
 Route::get('/lapdu','Lapdu\LapduController@create')->name('lapdu.index');
 Route::post('/lapdu','Lapdu\LapduController@store')->name('lapdu.store');
 
 Route::get('/omjaka','omjaka\omjakaController@create')->name('omjaka.index');
 Route::post('/omjaka','omjaka\omjakaController@store')->name('omjaka.store');
+
+Route::get('/wbs','Wbs\WbsController@create')->name('wbs.index');
+Route::post('/wbs','Wbs\WbsController@store')->name('wbs.store');
 
 Route::get('/pengaduan-masyarakat','Pengaduan\PengaduanController@create')->name('pengaduan.create');
 Route::post('/pengaduan-masyarakat','Pengaduan\PengaduanController@store')->name('pengaduan.store');
