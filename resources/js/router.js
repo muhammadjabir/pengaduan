@@ -43,7 +43,7 @@ const router = new Router({
             LapduRouter,
             OmjakaRouter,
             WbsRouter,
-            GratifikasiRouter
+            GratifikasiRouter,
 
         ]
 
