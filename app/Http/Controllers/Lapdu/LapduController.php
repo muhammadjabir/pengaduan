@@ -26,8 +26,13 @@ class LapduController extends Controller
 
         return $user;
     }
-    public function create(){
-        return view('lapdu.index');
+    public function create(Request $request){
+        if ($request->kode) {
+            $pengaduan = Lapdu::with(['warga','user'])->where('nomor_registrasi',$request->kode)->first();
+            return view('lapdu.detail',compact('pengaduan'));
+        }else {
+            return view('lapdu.index');
+        }
     }
 
     public function store(Request $request){

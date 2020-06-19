@@ -13,8 +13,11 @@
 Route::get('/','HomeController@index')->name('home');
 Route::get('/lapdu','Lapdu\LapduController@create')->name('lapdu.index');
 Route::post('/lapdu','Lapdu\LapduController@store')->name('lapdu.store');
-Route::get('/pengaduan-masyarakat','Pengaduan\PengaduanController@create')->name('pengaduan.create');
 
+Route::get('/omjaka','omjaka\omjakaController@create')->name('omjaka.index');
+Route::post('/omjaka','omjaka\omjakaController@store')->name('omjaka.store');
+
+Route::get('/pengaduan-masyarakat','Pengaduan\PengaduanController@create')->name('pengaduan.create');
 Route::post('/pengaduan-masyarakat','Pengaduan\PengaduanController@store')->name('pengaduan.store');
 Route::get('/pengaduan-masyarakat/detail','Pengaduan\PengaduanController@detail')->name('pengaduan.detail');
 Route::get('/{any}',function(){

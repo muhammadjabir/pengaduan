@@ -8,8 +8,8 @@
         </div>
 
         <div class="card-body">
-            <form action="/test" name="cari">
-                <input type="text" value="No Registrasi">
+            <form action="" name="cari">
+                <input type="text" name="kode" value="No Registrasi">
                  <button type="submit">Cari</button>
             </form>
         </div>

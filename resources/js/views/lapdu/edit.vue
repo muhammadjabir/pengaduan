@@ -154,6 +154,7 @@ export default {
              this.alamat = warga.alamat
              this.nohp = warga.nohp
              this.email = warga.email
+             this.jawaban = lapdu.jawaban
          })
          .catch((err) => console.log(err.response))
         }
