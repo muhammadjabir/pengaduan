@@ -44,9 +44,7 @@ const router = new Router({
             OmjakaRouter,
             WbsRouter,
             GratifikasiRouter,
-
         ]
-
     },
 
     {
