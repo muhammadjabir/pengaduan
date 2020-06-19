@@ -12,10 +12,7 @@ import PengaduanRouter from './routes/Pengaduan'
 import LapduRouter from './routes/Lapdu'
 import OmjakaRouter from './routes/Omjaka'
 import WbsRouter from './routes/Wbs'
-<<<<<<< HEAD
-=======
 import GratifikasiRouter from './routes/Gratifikasi'
->>>>>>> 6c11c0e650f0bf86a27eec607e2d1528765c56b1
 
 // import Vuetify from 'vuetify'
 // Vue.use(Vuetify)
@@ -45,13 +42,8 @@ const router = new Router({
             PengaduanRouter,
             LapduRouter,
             OmjakaRouter,
-<<<<<<< HEAD
-            WbsRouter
-=======
             WbsRouter,
             GratifikasiRouter
->>>>>>> 6c11c0e650f0bf86a27eec607e2d1528765c56b1
-
         ]
 
     },

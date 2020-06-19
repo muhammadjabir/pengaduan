@@ -51,11 +51,7 @@
                                 <td class="text-left">{{item.subjek}}</td>
                                 <td class="text-left">{{item.created_at}}</td>
                                 <td class="text-left">
-<<<<<<< HEAD
-                                <v-btn color="success" v-on:click="edit(item.id)"  v-if="item.file_pengaduan" >
-=======
                                  <v-btn color="success" v-on:click="dokumentUrl(item.file_pengaduan)"  v-if="item.file_pengaduan" >
->>>>>>> 6c11c0e650f0bf86a27eec607e2d1528765c56b1
                                     Dokumen
                                 </v-btn>
                                 <!-- <v-btn color="error" fab x-small @click="dialogDelete(item.id)" >
