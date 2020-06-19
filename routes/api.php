@@ -31,19 +31,14 @@ Route::get('/pengaduan','Pengaduan\PengaduanController@index');
 Route::get('/e-lapdu','Lapdu\LapduController@index');
 Route::get('/e-lapdu/{id}/edit','Lapdu\LapduController@edit');
 Route::put('/e-lapdu/{id}','Lapdu\LapduController@update');
-
 Route::get('/omjaka','omjaka\omjakaController@index');
 Route::get('/omjaka/{id}/edit','omjaka\omjakaController@edit');
 Route::put('/omjaka/{id}','omjaka\omjakaController@update');
-
-
 Route::get('/wbs','Wbs\WbsController@index');
 Route::get('/wbs/{id}/edit','Wbs\WbsController@edit');
 Route::put('/wbs/{id}','Wbs\WbsController@update');
-
 Route::get('/gratifikasi','gratifikasi\gratifikasiController@index');
 Route::get('/gratifikasi/{id}/edit','gratifikasi\gratifikasiController@edit');
-
 Route::get('/pengaduan/{id}/edit','Pengaduan\PengaduanController@edit');
 Route::put('/pengaduan/{id}','Pengaduan\PengaduanController@update');
 Route::resource('masterdata', 'Masterdata\MasterdataController');
