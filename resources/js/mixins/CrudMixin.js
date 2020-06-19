@@ -84,6 +84,9 @@ export default {
         dialogDelete(id){
             this.idDelete = id
             this.dialog = true
+        },
+        dokumentUrl(url){
+            window.open(url);
         }
     },
 
