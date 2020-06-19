@@ -20,11 +20,14 @@ Route::get('/','HomeController@index')->name('home');
 Route::get('/lapdu','Lapdu\LapduController@create')->name('lapdu.index');
 Route::post('/lapdu','Lapdu\LapduController@store')->name('lapdu.store');
 
-Route::get('/omjaka','omjaka\omjakaController@create')->name('omjaka.index');
-Route::post('/omjaka','omjaka\omjakaController@store')->name('omjaka.store');
+Route::get('/pengaduan-korupsi','omjaka\omjakaController@create')->name('omjaka.index');
+Route::post('/pengaduan-korupsi','omjaka\omjakaController@store')->name('omjaka.store');
 
 Route::get('/wbs','Wbs\WbsController@create')->name('wbs.index');
 Route::post('/wbs','Wbs\WbsController@store')->name('wbs.store');
+
+Route::get('/gratifikasi','gratifikasi\gratifikasiController@create')->name('gratifikasi.index');
+Route::post('/gratifikasi','gratifikasi\gratifikasiController@store')->name('gratifikasi.store');
 
 Route::get('/pengaduan-masyarakat','Pengaduan\PengaduanController@create')->name('pengaduan.create');
 Route::post('/pengaduan-masyarakat','Pengaduan\PengaduanController@store')->name('pengaduan.store');
