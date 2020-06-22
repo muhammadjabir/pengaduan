@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendPengaduan;
+use App\Mail\SendRegistrasi;
 
 class LapduController extends Controller
 {
@@ -76,6 +77,12 @@ class LapduController extends Controller
             if (!$pengaduan->save()) {
                 $error++;
                 throw new \Exception('Gagal Melakukan Pengaduan');
+            } else {
+                $data = [
+                    'subject' => 'E-Lapdu',
+                    'registrasi' => $nomor
+                ];
+                Mail::to($warga->email)->send(new SendRegistrasi($data));
             }
             if ($error === 0) {
                 DB::commit();

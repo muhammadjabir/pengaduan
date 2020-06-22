@@ -8,6 +8,7 @@ use App\Models\Wbs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendPengaduan;
+use App\Mail\SendRegistrasi;
 use DB;
 
 class WbsController extends Controller
@@ -74,6 +75,12 @@ class WbsController extends Controller
             if (!$pengaduan->save()) {
                 $error++;
                 throw new \Exception('Gagal Melakukan Pengaduan');
+            }else {
+                $data = [
+                    'subject' => 'Wistle Blowing System (WBS)',
+                    'registrasi' => $nomor
+                ];
+                Mail::to($warga->email)->send(new SendRegistrasi($data));
             }
             if ($error === 0) {
                 DB::commit();
