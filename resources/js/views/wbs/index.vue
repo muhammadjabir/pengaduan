@@ -2,7 +2,7 @@
     <v-app>
         <Progress v-if="loading"/>
         <v-container v-if="!loading">
-            <v-btn small color="teal darken-2" class="white--text" tile>Pengaduan OmJaka</v-btn>
+            <v-btn small color="teal darken-2" class="white--text" tile>Wistle Blowing System (WBS)</v-btn>
             <v-card
             class="border-edit"
             tile
