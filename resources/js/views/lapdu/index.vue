@@ -2,7 +2,7 @@
     <v-app>
         <Progress v-if="loading"/>
         <v-container v-if="!loading">
-            <v-btn small color="teal darken-2" class="white--text" tile>Pengaduan</v-btn>
+            <v-btn small color="teal darken-2" class="white--text" tile>E-Lapdu</v-btn>
             <v-card
             class="border-edit"
             tile

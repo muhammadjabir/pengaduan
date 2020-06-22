@@ -6,7 +6,7 @@
                     md="12"
                 >
                 <v-container>
-                    <v-btn small color="teal darken-2" class="white--text" tile>Data Laporan Pengaduan</v-btn>
+                    <v-btn small color="teal darken-2" class="white--text" tile>Data Gratifikasi Online</v-btn>
                     <v-card
                     class="border-edit"
                     tile

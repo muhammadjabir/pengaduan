@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-container>
-            <v-btn small color="teal darken-2" class="white--text" tile>Jawab Pengaduan</v-btn>
+            <v-btn small color="teal darken-2" class="white--text" tile>Jawab Pengaduan Masyarakat</v-btn>
             <v-card
             class="border-edit"
             tile
