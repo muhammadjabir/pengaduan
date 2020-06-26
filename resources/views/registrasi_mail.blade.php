@@ -67,9 +67,15 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="container">
+                @if (array_key_exists($data['registrasi'],$data))
                 <h3> Terimakasih Telah melakukan pengaduan  {{ $data['subject'] }}</h3>
 
                 <h3>Nomor Registrasi anda adalah {{ $data['registrasi'] }}</h3>
+                @else
+                <h3> Terimakasih Telah melakukan pengaduan  {{ $data['subject'] }}</h3>
+                <h3>Pertanyaan Akan kami jawab</h3>
+                @endif
+
 
             </div>
         </div>

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendPengaduan;
-
+use App\Mail\SendRegistrasi;
 use DB;
 class PengaduanController extends Controller
 {
@@ -78,6 +78,11 @@ class PengaduanController extends Controller
             if (!$pengaduan->save()) {
                 $error++;
                 throw new \Exception('Gagal Melakukan Pengaduan');
+            } else {
+                $data = [
+                    'subject' => 'Pelayanan Hukum',
+                ];
+                Mail::to($warga->email)->send(new SendRegistrasi($data));
             }
             if ($error === 0) {
                 DB::commit();
