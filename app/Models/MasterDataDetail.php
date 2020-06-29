@@ -17,4 +17,8 @@ class MasterDataDetail extends Model
     public function role_menu(){
         return $this->hasOne('App\Models\RoleMenu','id_role');
     }
+
+    public function pertanyaan(){
+        return $this->hasMany('App\Pertanyaan','id_prtanyaan');
+    }
 }

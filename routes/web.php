@@ -19,6 +19,9 @@ Route::get('/test',function(){
 Route::get('/','HomeController@index')->name('home');
 Route::get('/lapdu','Lapdu\LapduController@create')->name('lapdu.index');
 Route::post('/lapdu','Lapdu\LapduController@store')->name('lapdu.store');
+Route::get('/e-survey','PertanyaanController@index')->name('pertanyaan.index');
+Route::get('/e-survey-data','PertanyaanController@detail')->name('pertanyaan.detail');
+Route::post('/e-survey','PertanyaanController@store')->name('pertanyaan.store');
 
 Route::get('/pengaduan-korupsi','omjaka\omjakaController@create')->name('omjaka.index');
 Route::post('/pengaduan-korupsi','omjaka\omjakaController@store')->name('omjaka.store');
