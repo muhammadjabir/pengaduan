@@ -38,6 +38,9 @@ class PertanyaanController extends Controller
                     case 'kurang memuaskan':
                         $nilai = 2;
                         break;
+                    case 'sangat kurang':
+                        $nilai = 1;
+                        break;
                     default:
                         $nilai = 1;
                         break;
