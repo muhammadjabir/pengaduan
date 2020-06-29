@@ -21,4 +21,5 @@ class MasterDataDetail extends Model
     public function pertanyaan(){
         return $this->hasMany('App\Pertanyaan','id_prtanyaan');
     }
+
 }

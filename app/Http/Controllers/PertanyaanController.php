@@ -70,5 +70,6 @@ class PertanyaanController extends Controller
           array_push($pertanyaan,$data_nilai);
         }
         return view('pertanyaan-detail',compact('pertanyaan'));
+
     }
 }
