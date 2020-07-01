@@ -54,7 +54,7 @@ class PertanyaanController extends Controller
             }
             if ($error === 0) {
                 DB::commit();
-                return redirect()->route('ertanyaan.detail');
+                return redirect()->route('pertanyaan.detail');
             }
             } catch (\Exception $e) {
                 DB::rollback();
