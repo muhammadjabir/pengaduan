@@ -21,6 +21,7 @@ Route::post('/register', 'AuthJWT\AuthController@register');
 Route::post('/login', 'AuthJWT\AuthController@login');
 Route::post('/logout', 'AuthJWT\AuthController@logout');
 Route::post('/edit-profile','AuthJWT\AuthController@EditProfile');
+Route::get('/survey','PertanyaanController@data_survey')->name('get.survey');
 
 
 Route::middleware(['auth:api'])->group(function () {

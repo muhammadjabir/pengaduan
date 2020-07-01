@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA=" crossorigin="anonymous" />
     <script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
 </head>
 <body>
@@ -30,10 +31,10 @@
                 <img src="{{asset('img/logo-kejaksaan.png')}}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                    KEJAKSAAN NEGERI KABUPATEN BOGOR
                 </a>
-               
 
-                
-                <!-- Left Side Of Navbar 
+
+
+                <!-- Left Side Of Navbar
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
