@@ -67,7 +67,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="container">
-                @if (array_key_exists($data['registrasi'],$data))
+                @if (array_key_exists('registrasi',$data))
                 <h3> Terimakasih Telah melakukan pengaduan  {{ $data['subject'] }}</h3>
 
                 <h3>Nomor Registrasi anda adalah {{ $data['registrasi'] }}</h3>
