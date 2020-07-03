@@ -6,7 +6,7 @@
         <!-- <Progress v-if="loading"/> -->
 
         <v-container>
-        <v-row>
+        <v-row v-if="loaded">
             <v-col
             cols="12"
             md="6"
@@ -18,7 +18,7 @@
                     <v-btn small color="pink darken-2" class="white--text" tile>Pengaduan Korupsi</v-btn>
                         <v-card-text class="text-center">
 
-                        <Bar-Chart :chartdata="chartdata" :options="options" />
+                        <Bar-Chart :chartdata="data" :options="options" />
 
                         </v-card-text>
 
@@ -131,82 +131,12 @@ export default {
   },
   data() {
       return {
+          data:null,
           data2:null,
           data3: null,
           data4:null,
           data5:null,
-          labels: ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
-      }
-  },
-  async created () {
-        let url = this.$route.path
-        await this.axios.get(url)
-        .then((ress) =>{
-            console.log(ress)
-               this.chartdata = {
-            labels:this.labels,
-            datasets: [
-              {
-                label: 'Pengaduan Korupsi ' + ress.tahun,
-                backgroundColor: "rgba(255, 99, 132, 0.2)",
-                borderColor:['rgba(255, 99, 132, 0.1)'],
-                data: ress.pengaduan_korupsi
-              }
-            ]
-          }
-          this.data2 = {
-            labels: this.labels,
-            datasets: [
-              {
-                label: 'Pengaduan Masyarakat ' + ress.tahun,
-                backgroundColor: "rgba(0, 153, 0, 0.2)",
-
-                borderColor:['rgba(255, 99, 132, 0.1)'],
-                data: ress.pengaduan_masyarakat
-              }
-            ]
-          }
-
-          this.data3 = {
-            labels: this.labels,
-            datasets: [
-              {
-                label: 'E-Lapdu ' + ress.tahun,
-                backgroundColor: "rgba(255, 128, 0, 0.2)",
-
-                borderColor:['rgba(255, 99, 132, 0.1)'],
-                data: ress.elapdu
-              }
-            ]
-          }
-
-          this.data4 = {
-            labels: this.labels,
-            datasets: [
-              {
-                label: 'Gratifikasi Online ' + ress.tahun,
-                backgroundColor: "rgba(204, 0, 0, 0.2)",
-
-                borderColor:['rgba(255, 99, 132, 0.1)'],
-                data: ress.gratifikasi
-              }
-            ]
-          }
-
-          this.data5 = {
-            labels: this.labels,
-            datasets: [
-              {
-                label: 'Wistle Blowing System (WBS) ' + ress.tahun,
-                backgroundColor: "rgba(0, 102, 204, 0.2)",
-
-                borderColor:['rgba(255, 99, 132, 0.1)'],
-                data: ress.wbs
-              }
-            ]
-          }
-
-          this.options= {
+          options: {
             responsive: true,
             scales: {
                     yAxes:[{
@@ -215,11 +145,86 @@ export default {
                       }
                     }]
             }
+          },
+          loaded: false,
+          labels: ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
+      }
+  },
+  async created () {
+        let url = '/dashboard'
+        await this.axios.get(url)
+        .then((ress) =>{
+            console.log(ress)
+            this.data = {
+            labels:this.labels,
+            datasets: [
+              {
+                label: 'Pengaduan Korupsi ' + ress.data.tahun,
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                borderColor:['rgba(255, 99, 132, 0.1)'],
+                data: [ress.data.pengaduan_korupsi]
+              }
+            ]
           }
+          this.data2 = {
+            labels: this.labels,
+            datasets: [
+              {
+                label: 'Pengaduan Masyarakat ' + ress.data.tahun,
+                backgroundColor: "rgba(0, 153, 0, 0.2)",
+
+                borderColor:['rgba(255, 99, 132, 0.1)'],
+                data: ress.data.pengaduan_masyarakat
+              }
+            ]
+          }
+
+          this.data3 = {
+            labels: this.labels,
+            datasets: [
+              {
+                label: 'E-Lapdu ' + ress.data.tahun,
+                backgroundColor: "rgba(255, 128, 0, 0.2)",
+
+                borderColor:['rgba(255, 99, 132, 0.1)'],
+                data: ress.data.elapdu
+              }
+            ]
+          }
+
+          this.data4 = {
+            labels: this.labels,
+            datasets: [
+              {
+                label: 'Gratifikasi Online ' + ress.data.tahun,
+                backgroundColor: "rgba(204, 0, 0, 0.2)",
+
+                borderColor:['rgba(255, 99, 132, 0.1)'],
+                data: ress.data.gratifikasi
+              }
+            ]
+          }
+
+          this.data5 = {
+            labels: this.labels,
+            datasets: [
+              {
+                label: 'Wistle Blowing System (WBS) ' + ress.data.tahun,
+                backgroundColor: "rgba(0, 102, 204, 0.2)",
+
+                borderColor:['rgba(255, 99, 132, 0.1)'],
+                data: ress.data.wbs
+              }
+            ]
+          }
+
+
         })
         .catch((err) => {
             console.log(err.response)
         })
+
+        this.loaded = true
 
   }
 }
