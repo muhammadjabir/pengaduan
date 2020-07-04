@@ -7,6 +7,9 @@ use App\Models\Barang;
 use App\Models\Gratifikasi;
 use App\Models\Warga;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendPengaduan;
+use App\Mail\SendRegistrasi;
 use DB;
 
 class gratifikasiController extends Controller
@@ -75,12 +78,17 @@ class gratifikasiController extends Controller
                     if (array_key_exists($i,$files)) {
                         $file = $files[$i]->store('file_barang','public');
                         $barang->file_barang = $file;
+
                     }
                     if (!$barang->save()) {
                         $error++;
                         throw new \Exception('Gagal Melakukan Save barang');
                         break;
                     }
+                    $data = [
+                        'subject' => 'Pelayanan Hukum',
+                    ];
+                    Mail::to($warga->email)->send(new SendRegistrasi($data));
 
                 }
             }else {
